@@ -1,0 +1,17 @@
+1) The for (do) loop (1, n)
+   in python it counts from 1 to n, but not including n
+   in Fortran it counts from 1 to n, including n.
+
+2) Array (list) elements
+   The first element of a list in Python is array(0), ending at array(n-1),
+   or its array (-n), ending at array(-1)
+   The first element of an array in Fortran is array(1), unless specified
+   otherwise
+
+3) ending a loop and a function prematurely. Say you are looping over 
+numbers until you find an answer in a function. When you find the
+right answer you want to terminate the loop and the function
+prematurely. In Fortran, you would do exit first, to leave the loop
+and then end function to leave the function. In python, you just type
+return(arguments) in the loop, and the loop and the function will
+terminate.
