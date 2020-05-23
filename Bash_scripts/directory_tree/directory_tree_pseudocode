@@ -1,0 +1,38 @@
+# Script to go down a directory and do something in every directory
+
+level=1
+while level ge 1
+  # find the first directory in the list that you have not been in yet
+  # Or go up by one level if you have been in all of them
+  directories = ls -d */ # every directory in current directory
+  for i = 1, len(directories)
+    if found_one = Y
+      exit i loop
+    for j = 1, len(passed_at_this_level) 
+      # if you found a record indicating that you already passed 
+      # this directory at this level then skip it:
+      if directories(i) = passed_at_this_level(j)
+        # and, if this was the last directory in ls:
+        if i = len(directories)
+            # then you have been in all the directories at this level, 
+            # so go up by one level
+            passed_at_this_level = null
+            level = level -1
+            cd ../
+        # otherwise:
+        else skip this i (exit j loop)
+        # if you already passed through all the records for this
+        # level and it seems you have not been in this directory
+        if j = len(passed_at_this_level)
+          found_one = Y
+          current_dir = i
+        # otherwise, keep looking through the records... (j loop)
+  passed_at_this_level.append(current_dir)
+  cd current_dir
+  level = level + 1
+  do something here - delete some files
+  if there are no directories
+    passed_at_this_level = null
+    level = level -1
+    cd ..
+

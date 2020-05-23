@@ -1,0 +1,12 @@
+Script to go to every single directory in a directory tree and do something.
+I.e. make some changes to some files, delete some files etc.
+
+For example. In the directory where the Gaussian calculations are, go
+in every directory and delete the .chk and .fchk files so that the
+directory with the calculaions  becomes lighter and the results can be 
+more easily shared by uploading or sending by e-mail. 
+
+Or check that all reported energies are correct etc. 
+
+Or for example, in c++ remove all files in every directory, so that
+you don't have to call rm -r from bash
