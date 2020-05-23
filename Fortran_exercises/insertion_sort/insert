@@ -1,0 +1,29 @@
+ here you can see the details of how the loops and conditionals
+ really work
+
+ (using two arrays)
+
+ A   58.53900  86.22800  65.95400  47.54800
+
+ i           1
+
+   1 B  58.539  0.000  0.000  0.000
+ i           2
+    j           1
+
+   2 B  58.539 86.228  0.000  0.000
+ i           3
+    j           1
+    j           2
+ found it
+       k           2
+
+   3 B  58.539 65.954 86.228  0.000
+ i           4
+    j           1
+ found it
+       k           3
+       k           2
+       k           1
+
+   4 B  47.548 58.539 65.954 86.228
