@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Onclick</title>
+		
+		<script type=text/javascript>
+		function PrintGivenInput() 
+		{
+			var InputGiven = document.getElementById("ins").value;
+			
+			if (InputGiven.length == 0)
+			{
+				document.getElementById("para").innerHTML = "Nothing was printed";
+			}
+			else
+			{
+				document.getElementById("para").innerHTML = "The input was " + InputGiven;
+			}
+		}
+		</script>
+    </head>
+	
+	<style>
+		p {color:#a3295c}
+	</style>
+
+    <body>
+        <h1>Testing javascript onclick event with input</h1>
+		<input id="ins" />
+        <button onclick="PrintGivenInput();"> Submit! </button>
+		<p id="para"></p>
+    </body>
+</html>

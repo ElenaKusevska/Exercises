@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Onclick</title>
+		
+		<script type=text/javascript>
+		function DisplayTextInParagraph() 
+		{
+			document.getElementById("para").innerHTML = "onclick input given";
+		}
+		</script>
+    </head>
+	
+	<style>
+		p {color:#a3295c}
+	</style>
+
+    <body>
+        <h1>Testing javascript onclick event</h1>
+
+        <button onclick="DisplayTextInParagraph();"> Submit! </button>
+		<p id="para"></p>
+    </body>
+</html>

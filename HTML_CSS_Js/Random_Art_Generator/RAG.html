@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<!--- This is the front end for a web page that takes some input from the user 
+and based on this generates a random image. I thought it would be a fun idea. --->
+
+<html>
+
+<head>
+    <Title>RAG</Title>
+    <link rel="stylesheet" href="RAG.css">
+    <script src="RAG_validate.js"></script>
+
+</head>
+
+
+
+<body>
+    <img src="RAG.jpg"/>
+
+    <h1> Random Art Generator </h1>
+    
+    <p> Give us some info about your momentary artistic state of mind 
+    and we'll generate a custom random abstract digital art piece for you.
+    Fill in the form below and click "Get my digital art" when you're done.</p>
+    
+    <!--- Form questions: --->
+    <table>
+        <tr>
+            <td class="col0">Type the first word that comes to your mind</td>
+            <td class="col2"> <input type="text" name="rand-word" id="rand_word" onblur="validate_random_word();"> </td>
+            <td class="col3"> <span id="rand-word-prompt"> </span> </td>
+        </tr>        
+        <tr>
+            <td class="col1">Pick a primary color:</td>
+            <td class="col2"> <input type="radio" name="prime-col" value="Blue" onclick="validate_radio('prime-col', 'prime-col-prompt', 'primary color');" > Blue <br>
+                              <input type="radio" name="prime-col" value="Yellow" onclick="validate_radio('prime-col', 'prime-col-prompt', 'primary color');"> Yellow <br>
+                              <input type="radio" name="prime-col" value="Red" onclick="validate_radio('prime-col', 'prime-col-prompt', 'primary color');"> Red <br> </td>
+            <td class="col3"> <span id="prime-col-prompt"> </span> </td>
+        </tr>
+        <tr>
+            <td class="col1">Pick a secondary color:</td>
+            <td class="col2"> <input type="radio" name="sec-col" value="Purple" onclick="validate_radio('sec-col', 'sec-col-prompt', 'secondary color');"> Purple <br>
+                              <input type="radio" name="sec-col" value="Green" onclick="validate_radio('sec-col', 'sec-col-prompt', 'secondary color');"> Green <br>
+                              <input type="radio" name="sec-col" value="Orange" onclick="validate_radio('sec-col', 'sec-col-prompt', 'secondary color');"> Orange <br> </td>
+            <td class="col3"> <span id="sec-col-prompt"> </span> </td>                  
+        </tr>
+        <tr>
+            <td class="col1">Pick a brush:</td>
+            <td class="col2"> <input type="radio" name="brush" value="Airbrush" onclick="validate_radio('brush', 'brush-prompt', 'brush')"> Airbrush <br>
+                              <input type="radio" name="brush" value="Hard-round-brush" onclick="validate_radio('brush', 'brush-prompt', 'brush')"> Hard round brush <br>
+                              <input type="radio" name="brush" value="Flat-soft-brush" onclick="validate_radio('brush', 'brush-prompt', 'brush')"> Flat soft brush <br> 
+                              <input type="radio" name="brush" value="Marker" onclick="validate_radio('brush', 'brush-prompt', 'brush')"> Marker <br> </td>
+            <td class="col3"> <span id="brush-prompt"> </span> </td>                  
+        </tr>
+        <tr>
+            <td class="col1"> How are you feeling? (select all that apply) </td>
+            <td class="col2"> <input type="checkbox" name="feels" value="Content" onclick="validate_checkbox();"> Content <br>
+                              <input type="checkbox" name="feels" value="Happy" onclick="validate_checkbox();"> Happy <br>
+                              <input type="checkbox" name="feels" value="Sad" onclick="validate_checkbox();"> Sad <br> 
+                              <input type="checkbox" name="feels" value="Joyous" onclick="validate_checkbox();"> Joyous <br>
+                              <input type="checkbox" name="feels" value="Angry" onclick="validate_checkbox();"> Angry <br>
+                              <input type="checkbox" name="feels" value="Embarrased" onclick="validate_checkbox();"> Embarrased <br>
+                              <input type="checkbox" name="feels" value="Confident" onclick="validate_checkbox();"> Confident <br>
+                              <input type="checkbox" name="feels" value="Calm" onclick="validate_checkbox();"> Calm <br>
+                              <input type="checkbox" name="feels" value="Nostalgic" onclick="validate_checkbox();"> Nostalgic <br>
+                              <input type="checkbox" name="feels" value="Upset" onclick="validate_checkbox();"> Upset <br> </td>
+            <td class="col3"> <span id="feels-prompt"> </span> </td>
+        </tr>
+        <tr>
+            <td class="col6">Type a number from 1 to 1,000,000</td>
+            <td class="col2"> <input type="number" min="1" max ="1000000" id="rand-num" onblur="validate_number(1, 1000000, 'rand-num', 'rand-num-prompt');"> </td>
+            <td class="col3"> <span id="rand-num-prompt"> </span></td>
+        </tr>
+        <tr>
+            <td class="col6">How old are you?</td>
+            <td class="col2"> <input type="number" id="age" min="1" max="120" onblur="validate_number(1, 120, 'age', 'age-prompt');"> </td>
+            <td class="col3"> <span id="age-prompt"> </span </td>
+        </tr>
+        <tr>
+            <td class="col4" colspan="3"><span class="button" onclick="validate_form_submit();">Get my digital art</span> </td>
+        </tr>
+        <tr>
+            <td class="col5" colspan="3"><span id="order_output"> </span> </td>
+        </tr>
+    </table>
+  
+</body>
+
+</html>
