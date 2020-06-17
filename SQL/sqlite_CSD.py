@@ -11,7 +11,7 @@ CSD = pandas.read_csv('https://data.cityofchicago.org/resource/jcxq-k9xf.csv')
 print(CSD.iloc[:5])
 
 # Establish connection to local database
-conn = sqlite3.connect('./CSD.sqlite') # Create database
+conn = sqlite3.connect('./sqlite_CSD.db') # Create database
 cur = conn.cursor()
 
 # Drop table
@@ -25,5 +25,6 @@ cur.execute('select * from CSD limit 5;')
 results = cur.fetchall()
 print(results)
 
+cur.close()
 conn.close()
 
