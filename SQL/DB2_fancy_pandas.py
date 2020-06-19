@@ -4,6 +4,7 @@ import ibm_db
 import pandas
 import ibm_db_dbi
 
+# DSN Connection details:
 dsn_hostname = "dashdb-txn-sbox-yp-lon02-06.services.eu-gb.bluemix.net" 
 dsn_uid = "pwz45036"
 dsn_pwd = "pnzb63zjv4xsmw^d"
@@ -13,7 +14,7 @@ dsn_database = "BLUDB"
 dsn_port = "50000"
 dsn_protocol = "TCPIP"
 
-# Create the dsn connection string
+# Create the dsn connection string:
 dsn = (
     "DRIVER={0};"
     "DATABASE={1};"
@@ -22,33 +23,31 @@ dsn = (
     "PROTOCOL={4};"
     "UID={5};"
     "PWD={6};").format(dsn_driver, dsn_database, dsn_hostname, dsn_port, dsn_protocol, dsn_uid, dsn_pwd)
-
-# print the connection string to check correct values are specified
 print(dsn)
 
-# Create database connection
+# Create database connection:
 try:
     conn = ibm_db.connect(dsn, "", "")
     print ("Connected to database")
 except:
     print ("Unable to connect: ", ibm_db.conn_errormsg() )
 
-# connection for pandas
+# Connection for pandas:
 pconn = ibm_db_dbi.Connection(conn)
 
-# query statement to retrieve all rows in INSTRUCTOR table
+# query statement to retrieve all rows in INSTRUCTOR table:
 selectQuery = "select * from INSTRUCTOR"
 
-# retrieve the query results into a pandas dataframe
+# retrieve the query results into a pandas dataframe:
 pdf = pandas.read_sql(selectQuery, pconn)
 
-#print just the LNAME for first row in the pandas data frame
+#print just the LNAME for the first row in the pandas data frame:
 print(pdf.LNAME[0])
 
-#print the entire data frame
+#print the entire data frame:
 print(pdf)
 
-# print the shape of the data frame
+# print the shape of the data frame:
 print(pdf.shape)
 
 
