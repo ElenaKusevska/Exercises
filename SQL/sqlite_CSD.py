@@ -1,3 +1,5 @@
+#!/usr/bin/python3.6
+
 # Based on:
 # https://www.coursera.org/learn/sql-data-science/ungradedLti/uCNuW/hands-on-lab-3-analyzing-a-real-world-data-set
 # https://www.dataquest.io/blog/python-pandas-databases/
@@ -8,6 +10,8 @@
 import pandas
 import sqlite3
 import matplotlib.pyplot as plt
+import pandasql
+import seaborn
 
 # Pull CSD (Chicago Socioeconomic Data) into Pandas dataframe:
 CSD = pandas.read_csv('https://data.cityofchicago.org/resource/jcxq-k9xf.csv')

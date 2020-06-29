@@ -1,0 +1,21 @@
+When using Python apt-get and PIP
+
+apt-get installs in /usr/lib (on ubuntu 18.04)
+PIP installs in /home/elena/.local (on ubuntu 18.04)
+
+Add shebang path (#!/usr/bun/Python3.x) when using Ubuntu 18.04 because
+Python 2 is the default in Ubuntu 18.04
+
+Also make sure that PIP downloads with --user. Though it appears this
+is default for PIP3 on Ubuntu 18.04. 
+
+Then make sure /home/elena/.local is added to the PATH, because this is the
+directory that PIP3/PIP with --user installs to. And also, that in 
+/home/elena/.local there are separate python3.x and python2.7 directories, 
+and that the desired package is installed in python3.x.
+
+Also, PIP will install dependencies without asking, regardless of whether they
+are already installed in /usr/lib or not. So maybe it's best to just use pip 
+whenever possible and never use apt-get if possible. So that you don't have 
+multiple versions. For example, when you install numpy, scipy, and matplotlib
+for the first time, just use PIP.
