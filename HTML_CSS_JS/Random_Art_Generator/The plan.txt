@@ -1,7 +1,0 @@
-Image taken from: https://www.widewalls.ch/abstract-digital-art/
-
-Idea: have this webpage look different at every every load, randomly choosing from one of three pallettes, to see if
-      what the page looks like when it's loaded influences what the users choose.
-
-Idea: gather data about what the users chose, what image they were shown, and how they felt about it,
-      so that a learning algorithm can, over time learn how to give the users more and more pleasing images
