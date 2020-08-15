@@ -4,5 +4,5 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_templeta(".html")
+    return render_template("romantika.html")
 
