@@ -36,7 +36,7 @@ def main():
     f1 = quadratic(a=5.0, b=-6.0, c=1.0)
 
     f1.solve()
-    if f1.solved == True:
+    if f1.solved:
         print(f1.x1, f1.x2)
     else:
         print("no solution")
