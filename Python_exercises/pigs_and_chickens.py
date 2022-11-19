@@ -2,6 +2,8 @@
 
 # In a farm that has just pigs and chickens, there are 20 heads and 56
 # legs. How many pigs, and how many chickens are there?
+# I think this problem is from the mit introduction to computational thinking
+# course
 
 # Function to solve the problem - brute force solution
 # - enumerate and check:
