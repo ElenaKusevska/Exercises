@@ -8,5 +8,4 @@ more easily shared by uploading or sending by e-mail.
 
 Or check that all reported energies are correct etc. 
 
-Or for example, in c++ remove all files in every directory, so that
-you don't have to call rm -r from bash
+Sort of like, the implementation of rm -r :)
